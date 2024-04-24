@@ -65,7 +65,7 @@ const PickDetailsForm = () => {
                 size="small"
                 name="pickupLocation"
                 placeholder="Select your date"
-                options={["Hyderabad", "Chennai"]}
+                options={["24/04/2024", "25/04/2024"]}
               />
             </Stack>
             <Divider
@@ -87,7 +87,7 @@ const PickDetailsForm = () => {
                 size="small"
                 name="pickupLocation"
                 placeholder="Select your time"
-                options={["Hyderabad", "Chennai"]}
+                options={["9:00AM", "10:00AM", "11:00AM", "4:00PM", '5:00PM']}
               />
             </Stack>
           </Stack>
@@ -112,7 +112,7 @@ const PickDetailsForm = () => {
           <Stack direction="row" gap={1} alignItems="center">
             <MarkIcon />
             <Typography fontSize={16} fontWeight={600}>
-              Pick - Up
+              Drop - Off
             </Typography>
           </Stack>
           <Stack direction="row" gap={3} alignItems="center">
@@ -153,7 +153,7 @@ const PickDetailsForm = () => {
                 size="small"
                 name="pickupLocation"
                 placeholder="Select your date"
-                options={["Hyderabad", "Chennai"]}
+                options={["24/04/2024", "25/04/2024"]}
               />
             </Stack>
             <Divider
@@ -175,7 +175,7 @@ const PickDetailsForm = () => {
                 size="small"
                 name="pickupLocation"
                 placeholder="Select your time"
-                options={["Hyderabad", "Chennai"]}
+                options={["9:00AM", "10:00AM", "11:00AM", "4:00PM", '5:00PM']}
               />
             </Stack>
           </Stack>
