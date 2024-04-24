@@ -1,6 +1,7 @@
 import { theme } from "@/utils/theme/palette";
 import {
   Box,
+  Container,
   Divider,
   Link,
   List,
@@ -45,60 +46,65 @@ const Footer = () => {
     <Box
       component="footer"
       sx={{ backgroundColor: theme.common.white, mt: 8 }}
-      p={60 / 8}
+      py={60 / 8}
     >
-      <Stack direction="row" justifyContent="space-between">
-        <Stack gap={2}>
-          <Typography
-            component="h1"
-            sx={{ fontSize: 32, fontWeight: 700 }}
-            color="primary"
-          >
-            MORENT
-          </Typography>
-          <Typography
-            fontSize={16}
-            fontWeight={500}
-            sx={{ color: "rgba(19, 19, 19, 0.60)" }}
-          >
-            Our vision is to provide convenience
-            <br /> and help increase your sales business.
-          </Typography>
+      <Container maxWidth="xl"
+        sx={{
+          px: { lg: "64px !important" },
+        }}>
+        <Stack direction="row" justifyContent="space-between">
+          <Stack gap={2}>
+            <Typography
+              component="h1"
+              sx={{ fontSize: 32, fontWeight: 700 }}
+              color="primary"
+            >
+              MORENT
+            </Typography>
+            <Typography
+              fontSize={16}
+              fontWeight={500}
+              sx={{ color: "rgba(19, 19, 19, 0.60)" }}
+            >
+              Our vision is to provide convenience
+              <br /> and help increase your sales business.
+            </Typography>
+          </Stack>
+          <Stack direction="row" gap={60 / 8}>
+            {DATA.map((item) => (
+              <Stack component="section" about={item.title} key={item.title}>
+                <Typography component="h3" fontSize={20} fontWeight={600}>
+                  {item.title}
+                </Typography>
+                <List>
+                  {item.links.map((list) => (
+                    <ListItem disableGutters key={list.label}>
+                      <ListItemText>{list.label}</ListItemText>
+                    </ListItem>
+                  ))}
+                </List>
+              </Stack>
+            ))}
+          </Stack>
         </Stack>
-        <Stack direction="row" gap={60 / 8}>
-          {DATA.map((item) => (
-            <Stack component="section" about={item.title} key={item.title}>
-              <Typography component="h3" fontSize={20} fontWeight={600}>
-                {item.title}
-              </Typography>
-              <List>
-                {item.links.map((list) => (
-                  <ListItem disableGutters key={list.label}>
-                    <ListItemText>{list.label}</ListItemText>
-                  </ListItem>
-                ))}
-              </List>
-            </Stack>
-          ))}
-        </Stack>
-      </Stack>
-      <Divider
-        sx={{ my: 4, bgcolor: "rgba(19, 19, 19, 0.16)" }}
-        orientation="horizontal"
-      />
-      <Stack direction="row" justifyContent="space-between">
-        <Typography fontSize={16} fontWeight={600}>
-          ©2022 MORENT. All rights reserved
-        </Typography>
-        <Stack direction="row" gap={60 / 8}>
+        <Divider
+          sx={{ my: 4, bgcolor: "rgba(19, 19, 19, 0.16)" }}
+          orientation="horizontal"
+        />
+        <Stack direction="row" justifyContent="space-between">
           <Typography fontSize={16} fontWeight={600}>
-            Privacy & Policy
+            ©2022 MORENT. All rights reserved
           </Typography>
-          <Typography fontSize={16} fontWeight={600}>
-            Terms & Condition
-          </Typography>
+          <Stack direction="row" gap={60 / 8}>
+            <Typography fontSize={16} fontWeight={600}>
+              Privacy & Policy
+            </Typography>
+            <Typography fontSize={16} fontWeight={600}>
+              Terms & Condition
+            </Typography>
+          </Stack>
         </Stack>
-      </Stack>
+      </Container>
     </Box>
   );
 };
