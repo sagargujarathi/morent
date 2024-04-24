@@ -18,8 +18,8 @@ const CarCard = ({
   ...other
 }: ICarType) => {
   return (
-    <Grid item lg={4} md={4} xs={6} height="100%">
-      <Stack gap={3} p={3} bgcolor={theme.common.white} borderRadius={10 / 4}>
+    <Grid item lg={4} md={4} xs={6}>
+      <Stack gap={3} p={3} bgcolor={theme.common.white} borderRadius={10 / 4} height='100%'>
         <Stack
           direction="row"
           justifyContent="space-between"
